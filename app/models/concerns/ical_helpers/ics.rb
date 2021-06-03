@@ -14,6 +14,7 @@ module IcalHelpers
       cal.add_timezone Time.zone_default.tzinfo.ical_timezone payload[:starts_at]
       cal.prodid = BRAND
       cal.event { |event| populate_event(event, payload) }
+      cal.ip_method = "PUBLISH"
 
       cal.to_ical
     end
@@ -38,6 +39,7 @@ module IcalHelpers
       event.rrule = payload[:recurrence]
       event.sequence = payload[:sequence]
       event.description = payload[:description]
+      event.organizer = "mailto:secretariat-auto@rdv-solidarites.fr"
     end
   end
 end
