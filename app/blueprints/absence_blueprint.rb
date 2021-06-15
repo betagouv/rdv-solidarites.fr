@@ -9,6 +9,6 @@ class AbsenceBlueprint < Blueprinter::Base
 
   # rubocop:disable Style/SymbolProc
   field(:rrule) { _1.rrule }
-  field(:ical) { _1.to_ical }
+  field(:ical) { _1.to_ical } # Do we need to include the method: ics property here as well?
   # rubocop:enable Style/SymbolProc
 end
